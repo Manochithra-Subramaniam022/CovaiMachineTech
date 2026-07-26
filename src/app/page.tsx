@@ -1,65 +1,658 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    // Add script.js logic here or inject script
+    const script = document.createElement("script");
+    script.src = "/script.js";
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+
+    {/*  Navigation  */}
+    <nav className="navbar">
+        <div className="nav-container">
+            <div className="nav-logo">
+                <a href="#home" style={{display: 'flex', alignItems: 'center', textDecoration: 'none'}}>
+                    <img src="/logo.png" alt="Covai Machine Tech Logo" style={{height: '50px', width: 'auto', maxWidth: '100%', display: 'block'}} />
+                </a>
+            </div>
+            <div className="nav-menu" id="nav-menu">
+                <a href="#home" className="nav-link">Home</a>
+                <a href="#about" className="nav-link">About</a>
+                <div className="nav-dropdown">
+                    <button className="nav-link dropdown-toggle" style={{background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', padding: '0', color: '#334155', position: 'relative', transition: 'var(--transition)'}}>Capabilities <i className="fas fa-chevron-down" style={{fontSize: '0.75em', marginLeft: '3px'}}></i></button>
+                    <div className="dropdown-menu">
+                        <a href="#services" className="dropdown-item">Services</a>
+                        <a href="#machines" className="dropdown-item">Machines</a>
+                        <a href="#industries" className="dropdown-item">Industries</a>
+                        <a href="#portfolio" className="dropdown-item">Portfolio</a>
+                        <a href="#customers" className="dropdown-item">Customers</a>
+                    </div>
+                </div>
+                <a href="#contact" className="nav-link">Contact</a>
+            </div>
+            <div className="nav-toggle" id="nav-toggle">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    </nav>
+
+    {/*  Full-Screen HeroBackground Component with Layered Content  */}
+    <header className="hero-background-component" id="home">
+        <video autoPlay loop muted playsInline className="hero-bg-video" poster="https://cdn.prod.website-files.com/671f633d00383c11aeb0f116/672e35e7ffbeec4527df9af8_maxresdefault-poster-00001.jpg">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-metal-lathe-working-on-a-piece-of-metal-42844-large.mp4" type="video/mp4" />
+            <source src="https://cdn.pixabay.com/video/2021/08/11/84687-587848601_large.mp4" type="video/mp4" />
+            <img src="https://cdn.prod.website-files.com/671f633d00383c11aeb0f116/672e35e7552c5617bc904ba0_hero-cnc.png" alt="CNC Milling Spindle Machining Metal" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        </video>
+        <div className="hero-bg-overlay"></div>
+        
+        <div className="hero-content">
+            <div className="hero-text" style={{maxWidth: '720px', textAlign: 'left'}}>
+                <div className="hero-badge" style={{display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(255, 255, 255, 0.08)', backdropFilter: 'blur(12px)', padding: '8px 20px', borderRadius: '50px', border: '1px solid rgba(255, 255, 255, 0.18)', fontSize: '0.85rem', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '1.8rem', color: '#ff5722', boxShadow: '0 4px 20px rgba(0,0,0,0.3)'}}>
+                    <span style={{width: '8px', height: '8px', borderRadius: '50%', background: '#ff5722', display: 'inline-block', boxShadow: '0 0 10px #ff5722'}}></span> ISO 9001:2015 CERTIFIED FACILITY
+                </div>
+                <h1 className="hero-title" style={{fontSize: '4.2rem', fontWeight: '800', letterSpacing: '-1px', textShadow: '0 2px 10px rgba(0,0,0,0.5)', color: '#ffffff'}}>Precision Meets <span style={{color: '#ff5722'}}>Power</span></h1>
+                <p className="hero-subtitle" style={{fontSize: '1.35rem', maxWidth: '680px', margin: '0 0 2.5rem', color: '#cbd5e1', lineHeight: '1.6'}}>Advanced CNC turning, multi-axis milling, and heavy-duty VTL machining engineered for exceptional industrial performance. Spanning an expansive 2-Acre facility in Coimbatore with 7,000 Sq.Ft of constructed workspace.</p>
+                <div className="hero-buttons" style={{justifyContent: 'flex-start'}}>
+                    <a href="#contact" className="btn btn-primary" style={{padding: '14px 36px', fontSize: '1.05rem', boxShadow: '0 6px 20px rgba(255, 87, 34, 0.4)'}}>Get a Quote</a>
+                    <a href="#machines" className="btn btn-secondary" style={{padding: '14px 36px', fontSize: '1.05rem', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)', color: '#ffffff'}}>Explore Machinery</a>
+                </div>
+            </div>
         </div>
-      </main>
-    </div>
+    </header>
+
+    {/*  About Us Section  */}
+    <section id="about" className="about" style={{background: 'var(--bg-light)', padding: '6rem 0'}}>
+        <div className="container">
+            <div className="section-header">
+                <h2>About Covai Machine Tech</h2>
+                <p>ISO 9001:2015 Certified Precision CNC Manufacturing Facility</p>
+            </div>
+            <div className="about-container-full" style={{maxWidth: '1100px', margin: '0 auto 4rem'}}>
+                <div className="iso-badge-box" style={{background: '#ffffff', color: '#111827', padding: '1.8rem', borderRadius: '16px', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', border: '1px solid #e2e8f0', borderLeft: '5px solid #ff5722', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'}}>
+                    <i className="fas fa-award" style={{fontSize: '3rem', color: '#ff5722'}}></i>
+                    <div>
+                        <h4 style={{fontSize: '1.25rem', color: '#111827', marginBottom: '0.3rem', letterSpacing: '0.5px'}}>ISO 9001:2015 CERTIFIED COMPANY</h4>
+                        <p style={{fontSize: '0.95rem', margin: '0', color: '#334155'}}><strong>Certificate No:</strong> 25MEQTH25 | <strong>Valid Thru:</strong> 26/02/2028</p>
+                        <p style={{fontSize: '0.88rem', marginTop: '0.4rem', color: '#64748b', lineHeight: '1.5'}}>Scope: Manufacturing & Supply of Machined Components for Automobile and General Engineering.</p>
+                    </div>
+                </div>
+
+                <div className="about-text-content" style={{marginBottom: '3rem', fontSize: '1.1rem', lineHeight: '1.8', color: '#334155'}}>
+                    <p style={{marginBottom: '1.2rem'}}>Covai Machine Tech is an ISO 9001:2015 certified precision CNC manufacturing facility situated on Annur Main Road, Near Suzlon, Kittampalayam, Karumathampatti, Coimbatore. Spanning an expansive <strong style={{color: '#ff5722'}}>2-Acre facility with 7,000 Sq.Ft of constructed workspace</strong>, we are equipped with state-of-the-art infrastructure and well-trained operators.</p>
+                    <p style={{marginBottom: '1.2rem'}}>We are a team of qualified professionals with a proficient technical background, undertaking all kinds of challenging projects. We thoroughly understand customer requirements and adhere to precise planning and execution with a firm emphasis on quality and timely delivery at optimal cost.</p>
+                    <p>Our core capabilities include machining various valve components such as ball valves, gate valves, globe valves, check valves, and other pipeline-related parts. We undertake complete and partial job work based on client drawings, specifications, and industry standards, supported by our own dedicated transportation facilities for collection and delivery.</p>
+                </div>
+
+                {/*  Full-Width Uncropped Company View Showcase  */}
+                <div className="company-view-showcase" style={{background: '#ffffff', borderRadius: '24px', padding: '1.5rem', border: '1px solid #e2e8f0', boxShadow: '0 20px 45px rgba(0,0,0,0.06)', marginBottom: '2rem'}}>
+                    <div style={{textAlign: 'center', marginBottom: '1.2rem'}}>
+                        <span style={{background: 'rgba(255, 87, 34, 0.12)', color: '#ff5722', padding: '4px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase'}}>FACILITY OVERVIEW</span>
+                        <h3 style={{fontSize: '1.8rem', color: '#111827', margin: '0.5rem 0 0.2rem'}}>OUR COMPANY VIEW</h3>
+                        <p style={{color: '#64748b', fontSize: '0.95rem', margin: '0'}}>2-Acre Modern Manufacturing Facility & CNC Machine Shop in Coimbatore</p>
+                    </div>
+                    
+                    <div style={{borderRadius: '16px', overflow: 'hidden', background: '#f8f9fa', border: '1px solid #e2e8f0', marginBottom: '1.5rem'}}>
+                        <img src="/images/company-view.jpg" alt="Covai Machine Tech 2-Acre Modern Manufacturing Facility and Workspace in Coimbatore" style={{width: '100%', height: 'auto', objectFit: 'contain', display: 'block'}} />
+                    </div>
+
+                    <div style={{display: 'flex', flexWrap: 'wrap', gap: '1.2rem', justifyContent: 'center', padding: '1rem 0 0.5rem', borderTop: '1px solid #f1f5f9'}}>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Facility Area:</strong> 2 Acres</div>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Workers:</strong> 17 Persons</div>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Staffs:</strong> 5 Staffs</div>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Quality Staff:</strong> 2 Persons</div>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Designer:</strong> 1 Person</div>
+                        <div style={{background: '#f8f9fa', padding: '10px 18px', borderRadius: '12px', fontSize: '0.9rem', color: '#1e293b', border: '1px solid #e2e8f0'}}><strong style={{color: '#ff5722'}}>Fabrication & Welding:</strong> 2 Persons</div>
+                    </div>
+                </div>
+            </div>
+            <div className="about-stats" >
+                <div className="stat-item" style={{background: 'var(--bg-white)', padding: '2.5rem 1.5rem', borderRadius: '16px', boxShadow: '0 8px 25px rgba(0,0,0,0.06)', borderBottom: '4px solid #ff5722', transition: 'var(--transition)'}}>
+                    <h3 className="stat-number" data-target="7000" style={{fontSize: '3rem', fontWeight: '800', color: 'var(--primary-color)', marginBottom: '0.5rem'}}>0</h3>
+                    <p className="stat-label" style={{fontWeight: '600', color: 'var(--text-dark)'}}>Sq.Ft Facility Area (2 Acres)</p>
+                </div>
+                <div className="stat-item" style={{background: 'var(--bg-white)', padding: '2.5rem 1.5rem', borderRadius: '16px', boxShadow: '0 8px 25px rgba(0,0,0,0.06)', borderBottom: '4px solid #ff5722', transition: 'var(--transition)'}}>
+                    <h3 className="stat-number" data-target="25" style={{fontSize: '3rem', fontWeight: '800', color: 'var(--primary-color)', marginBottom: '0.5rem'}}>0</h3>
+                    <p className="stat-label" style={{fontWeight: '600', color: 'var(--text-dark)'}}>Skilled Staff & Technicians</p>
+                </div>
+                <div className="stat-item" style={{background: 'var(--bg-white)', padding: '2.5rem 1.5rem', borderRadius: '16px', boxShadow: '0 8px 25px rgba(0,0,0,0.06)', borderBottom: '4px solid #ff5722', transition: 'var(--transition)'}}>
+                    <h3 className="stat-number" data-target="23" style={{fontSize: '3rem', fontWeight: '800', color: 'var(--primary-color)', marginBottom: '0.5rem'}}>0</h3>
+                    <p className="stat-label" style={{fontWeight: '600', color: 'var(--text-dark)'}}>Precision Instruments & CMM</p>
+                </div>
+                <div className="stat-item" style={{background: 'var(--bg-white)', padding: '2.5rem 1.5rem', borderRadius: '16px', boxShadow: '0 8px 25px rgba(0,0,0,0.06)', borderBottom: '4px solid #ff5722', transition: 'var(--transition)'}}>
+                    <h3 className="stat-number" data-target="100" style={{fontSize: '3rem', fontWeight: '800', color: 'var(--primary-color)', marginBottom: '0.5rem'}}>0</h3>
+                    <p className="stat-label" style={{fontWeight: '600', color: 'var(--text-dark)'}}>% ISO 9001:2015 Certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Services Section  */}
+    <section id="services" className="services" style={{background: '#f8f9fa', padding: '6rem 0'}}>
+        <div className="container">
+            <div className="section-header">
+                <div style={{display: 'inline-block', background: 'rgba(255, 87, 34, 0.15)', color: '#ff5722', padding: '6px 16px', borderRadius: '30px', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '1rem', border: '1px solid rgba(255, 87, 34, 0.3)'}}>WHAT WE DO</div>
+                <h2 style={{color: '#111827', fontSize: '2.8rem', fontWeight: '800'}}>Our Core Capabilities</h2>
+                <p style={{color: '#64748b', maxWidth: '700px', margin: '0 auto'}}>Comprehensive CNC machining, multi-axis turning, and precision manufacturing solutions</p>
+            </div>
+            <div className="services-grid" >
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(255, 87, 34, 0.12)', color: '#ff5722', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>LMW Turning</span>
+                        <i className="fas fa-cog" style={{fontSize: '1.8rem', color: '#ff5722', background: 'rgba(255, 87, 34, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>CNC Turning Operations</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Advanced high-speed turning using LMW LL20TL5 & LL20TL10 centers (with steady rest) for precision cylindrical components up to 1100mm turning length.</p>
+                </div>
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(255, 87, 34, 0.12)', color: '#ff5722', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>3 & 4 Axis VMC</span>
+                        <i className="fas fa-industry" style={{fontSize: '1.8rem', color: '#ff5722', background: 'rgba(255, 87, 34, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Vertical Machining (VMC)</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>High-precision 3-Axis and 4-Axis (U-CAM) machining using BFW, AMS (1800mm travel), and KTM Double Column Machining Centers with through-coolant & angular head.</p>
+                </div>
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(245, 158, 11, 0.15)', color: '#d97706', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Heavy Duty VTL</span>
+                        <i className="fas fa-ruler-combined" style={{fontSize: '1.8rem', color: '#d97706', background: 'rgba(245, 158, 11, 0.12)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Vertical Turning Lathe</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Heavy-duty precision turning up to 800mm swing diameter and 700mm turning length using BFW BVL 700H for large industrial and valve components.</p>
+                </div>
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(255, 87, 34, 0.12)', color: '#ff5722', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Valve Machining</span>
+                        <i className="fas fa-faucet" style={{fontSize: '1.8rem', color: '#ff5722', background: 'rgba(255, 87, 34, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Valve & Pipeline Parts</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Specialist machining of ball valves, gate valves, globe valves, check valves, and pipeline engineering parts in carbon steel, stainless steel, alloy steel, and Inconel.</p>
+                </div>
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(16, 185, 129, 0.15)', color: '#059669', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>CARL ZEISS CMM</span>
+                        <i className="fas fa-microscope" style={{fontSize: '1.8rem', color: '#059669', background: 'rgba(16, 185, 129, 0.12)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>CMM Quality Inspection</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Rigorous quality control utilizing CARL ZEISS CONTURA 3D CMM, Trimos V7 2D Height Gauge (up to 1023mm), Mahr Surface Roughness tester, and Mitutoyo digital gauges.</p>
+                </div>
+                <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
+                        <span style={{background: 'rgba(168, 85, 247, 0.15)', color: '#9333ea', fontSize: '0.75rem', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>CAD & Logistics</span>
+                        <i className="fas fa-truck-moving" style={{fontSize: '1.8rem', color: '#9333ea', background: 'rgba(168, 85, 247, 0.12)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
+                    </div>
+                    <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Job Work & Logistics</h3>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Undertaking complete and partial job work with customized value-added services, supported by our dedicated transportation facilities for collection and delivery of materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Machines Section  */}
+    <section id="machines" className="machines" style={{background: '#ffffff', color: '#111827', padding: '6rem 0'}}>
+        <div className="container">
+            <div className="section-header">
+                <div style={{display: 'inline-block', background: 'rgba(255, 87, 34, 0.15)', color: '#ff5722', padding: '6px 16px', borderRadius: '30px', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '1rem', border: '1px solid rgba(255, 87, 34, 0.3)'}}>THE COVAI TECH SERIES™</div>
+                <h2 style={{color: '#111827', fontSize: '2.8rem', fontWeight: '800'}}>Engineered for Industrial Performance</h2>
+                <p style={{color: '#64748b', maxWidth: '700px', margin: '0 auto'}}>State-of-the-art CNC machining centers and high-precision inspection technology</p>
+            </div>
+            <div className="machines-grid" >
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-lmw-ll20tl5.jpeg" alt="CNC Turning Centre I - LMW LL20TL5" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#ff5722', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>LMW Turning</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>CNC Turning Centre - I <i className="fas fa-cog" style={{color: '#ff5722', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> LMW LL20TL5</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Capacity:</strong> Chuck Dia: 250mm | Max Turning Dia: 320mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#ff5722'}}>Specs:</strong> Max Turning Length: 500mm | No of Station: 8</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-lmw-ll20tl10.jpeg" alt="CNC Turning Centre II - LMW LL20TL10 with Steady Rest" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#ff5722', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>Steady Rest</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>CNC Turning Centre - II <i className="fas fa-cogs" style={{color: '#ff5722', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> LMW LL20TL10 WITH STEADY REST</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Capacity:</strong> Chuck Dia: 250mm | Max Turning Dia: 320mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#ff5722'}}>Specs:</strong> Max Turning Length: 1100mm | No of Station: 8</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-bfw-bvl700h.jpeg" alt="Vertical Turning Lathe - BFW BVL 700H" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#f59e0b', color: '#111111', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>Heavy Duty VTL</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Vertical Turning Lathe - I <i className="fas fa-ruler-combined" style={{color: '#f59e0b', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> BFW BVL 700H</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Capacity:</strong> Maximum Swing Dia: 800mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#f59e0b'}}>Specs:</strong> X Axis Travel: 330mm | Z Axis Travel: 725mm | 12 Pockets</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-bfw-bmc45tc24.jpeg" alt="Vertical Machining Centre I - BFW BMC45TC24++" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#ff5722', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>4th Axis U CAM</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Vertical Machining Centre - I <i className="fas fa-microchip" style={{color: '#ff5722', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> BFW BMC45TC24++</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Travel:</strong> X: 1000mm | Y: 550mm | Z: 710mm [WITH COLUMN RAISER]</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#ff5722'}}>Tech:</strong> 4th Axis : U CAM | No of Tools: 24 Pockets</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-ams-1690v50.jpeg" alt="Vertical Machining Centre II - AMS 1690V-50" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#ff5722', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>1800mm Travel</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Vertical Machining Centre - II <i className="fas fa-layer-group" style={{color: '#ff5722', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> AMS 1690V-50</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Travel:</strong> X Axis: 1800mm | Y Axis: 910mm | Z Axis: 810mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#ff5722'}}>Capacity:</strong> Heavy Duty Milling | No of Tools: 24 Pockets</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-ktm-dcmc2618.jpeg" alt="Double Column Machining Center - KTM DCMC2618" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#a855f7', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>Double Column</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Double Column Machining Center <i className="fas fa-cubes" style={{color: '#a855f7', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> KTM / DCMC2618</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Travel:</strong> X Axis: 2600mm | Y Axis: 1800mm | Z Axis: 1000mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#a855f7'}}>Includes:</strong> Through Coolant, Angular Head | No of Tools: 20 Pockets</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-zeiss-contura.jpeg" alt="Co-ordinate Measuring Machine - CARL ZEISS CONTURA" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#10b981', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>ZEISS CMM</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Co-ordinate Measuring Machine <i className="fas fa-microscope" style={{color: '#10b981', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> CARL ZEISS</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Model:</strong> CONTURA</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#10b981'}}>Measuring Range:</strong> X = 700mm | Y = 100mm | Z = 600mm</p>
+                    </div>
+                </div>
+                <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
+                        <img src="/images/machine-trimos-v7.jpeg" alt="2D Height Gauge - TRIMOS V7" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <span style={{position: 'absolute', top: '15px', right: '15px', background: '#10b981', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>TRIMOS 2D</span>
+                    </div>
+                    <div className="machine-info" style={{padding: '1.8rem'}}>
+                        <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>2D – Height Gauge (Trimos) <i className="fas fa-ruler-vertical" style={{color: '#10b981', fontSize: '1.1rem'}}></i></h3>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> TRIMOS V7</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Range:</strong> Measuring Range : 711mm</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#10b981'}}>Extended:</strong> Measuring Range with Extension : 1023mm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Industries Section  */}
+    <section id="industries" className="industries">
+        <div className="container">
+            <div className="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Trusted by diverse sectors for precision manufacturing</p>
+            </div>
+            <div className="industries-grid">
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-car"></i>
+                    </div>
+                    <h3>Automotive</h3>
+                    <p>Precision components for vehicles and automotive systems</p>
+                </div>
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-plane"></i>
+                    </div>
+                    <h3>Aerospace</h3>
+                    <p>High-precision parts for aerospace applications</p>
+                </div>
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Valves & Pipeline</h3>
+                    <p>Ball, gate, globe valves & critical pipeline fluid connectors</p>
+                </div>
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-factory"></i>
+                    </div>
+                    <h3>Manufacturing</h3>
+                    <p>Industrial components and machinery parts</p>
+                </div>
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Engineering</h3>
+                    <p>Custom engineering solutions and components</p>
+                </div>
+                <div className="industry-card">
+                    <div className="industry-icon">
+                        <i className="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Textiles</h3>
+                    <p>Precision parts for textile machinery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Portfolio Section  */}
+    <section id="portfolio" className="portfolio" style={{background: 'var(--bg-light)', padding: '6rem 0'}}>
+        <div className="container">
+            <div className="section-header">
+                <h2>Our Precision Portfolio</h2>
+                <p>Specialized machining of complex valve, pipeline, and automotive components</p>
+            </div>
+            <div className="portfolio-grid" >
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-valve-pipeline.png" alt="Valve & Pipeline Engineering Components" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>Valve & Pipeline Components</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>High-precision valve bodies and pipeline connectors in carbon & alloy steel</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-ball-valve.png" alt="Ball, Gate & Globe Valves" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>Ball, Gate & Globe Valves</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Specialist machining for critical fluid control applications</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-turned-parts.png" alt="High-Precision Turned Parts" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>High-Precision Turned Parts</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Cylindrical components up to 1100mm turning length with steady rest</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-heavy-vtl.png" alt="Heavy VTL Machined Components" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>Heavy VTL Machined Parts</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Large swing diameter components for heavy engineering sectors</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-inconel-steel.png" alt="Inconel & Stainless Steel Machining" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>Inconel & Stainless Steel</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Exotic alloy machining adhering to strict international standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-custom-assembly.png" alt="Custom Job Work & Assemblies" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>Custom Job Work & Assemblies</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Complete & partial job work executed from customer drawings</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="portfolio-item" style={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', border: '1px solid #e2e8f0'}}>
+                    <div className="portfolio-image" style={{height: '300px', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img src="/images/portfolio-4axis-ucam.png" alt="4-Axis U-CAM Precision Machining" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        <div className="portfolio-overlay" style={{background: 'linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.75))', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.8)', backdropFilter: 'blur(5px)'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '0.4rem'}}>4-Axis U-CAM Machining</h4>
+                            <p style={{color: '#475569', fontSize: '0.95rem'}}>Complex multi-sided milling with precision angular head attachments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Customers Section  */}
+    <section id="customers" className="customers" style={{background: 'var(--bg-white)', padding: '5rem 0'}}>
+        <div className="container">
+            <div className="section-header">
+                <h2>Our Valued Customers</h2>
+                <p>We are proud to be the trusted precision manufacturing partner for leading corporate groups and industry giants</p>
+            </div>
+            <div className="customers-grid" >
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-building" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>LAKSHMI RING TRAVELLERS</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Private Limited</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-cogs" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>SHANTHI GEAR LIMITED</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Murugappa Groups</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-gear" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>SAKTHI GEAR PRODUCTS</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Private Limited</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-water" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>FLOW LINK SYSTEMS</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Pvt. Ltd.</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-faucet" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>GALLI & CASSINA INDIA</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>G&C Valves Pvt. Ltd.</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-industry" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>ARIHANT TECHNOCAST INDIA</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Pvt. Ltd.</p>
+                    </div>
+                </div>
+                <div className="customer-card" style={{background: 'var(--bg-light)', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--accent-color)', display: 'flex', alignItems: 'center', gap: '1.2rem', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
+                    <i className="fas fa-wrench" style={{fontSize: '2.2rem', color: 'var(--primary-color)'}}></i>
+                    <div>
+                        <h4 style={{color: 'var(--primary-color)', fontSize: '1.05rem', marginBottom: '0.2rem'}}>BHARANI HYDRAULICS INDIA</h4>
+                        <p style={{fontSize: '0.85rem', color: 'var(--text-light)', margin: '0'}}>Private Limited</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/*  Why Choose Us Section  */}
+    <section className="why-choose">
+        <div className="container">
+            <div className="section-header">
+                <h2>Why Choose Covai Machine Tech</h2>
+                <p>Your partner in precision manufacturing and valve engineering</p>
+            </div>
+            <div className="features-grid">
+                <div className="feature-item">
+                    <div className="feature-icon">
+                        <i className="fas fa-award"></i>
+                    </div>
+                    <h3>ISO 9001:2015 Certified Quality</h3>
+                    <p>Strict adherence to ISO 9001:2015 standards with advanced CARL ZEISS CMM and Trimos 2D height gauge inspection.</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">
+                        <i className="fas fa-robot"></i>
+                    </div>
+                    <h3>Heavy & Multi-Axis Machining</h3>
+                    <p>Equipped with LMW CNC Turning, BFW/AMS VMCs up to 1800mm, and KTM Double Column Machining Centers.</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">
+                        <i className="fas fa-user-check"></i>
+                    </div>
+                    <h3>Skilled Technical Team</h3>
+                    <p>Qualified engineers, quality inspectors, CAD designers, and 17+ experienced machine operators.</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">
+                        <i className="fas fa-truck"></i>
+                    </div>
+                    <h3>Dedicated Transportation</h3>
+                    <p>In-house transportation facilities for seamless pickup and prompt delivery of raw materials and finished parts.</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">
+                        <i className="fas fa-tags"></i>
+                    </div>
+                    <h3>Optimal Cost & Customization</h3>
+                    <p>Complete and partial job work with customized value-added services at competitive market pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {/*  Contact Section  */}
+    <section id="contact" className="contact">
+        <div className="container">
+            <div className="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your next project with us?</p>
+            </div>
+            <div className="contact-content">
+                <div className="contact-info">
+                    <div className="contact-item">
+                        <div className="contact-icon">
+                            <i className="fas fa-user-tie"></i>
+                        </div>
+                        <div className="contact-details">
+                            <h4>Contact Person</h4>
+                            <p><strong>S. Vasanth Raj, B.E.</strong></p>
+                            <p style={{fontSize: '0.85rem', color: 'var(--text-light)'}}>GSTIN: 33BBFPV2361C3ZV</p>
+                        </div>
+                    </div>
+                    <div className="contact-item">
+                        <div className="contact-icon">
+                            <i className="fas fa-phone"></i>
+                        </div>
+                        <div className="contact-details">
+                            <h4>Mobile / Phone</h4>
+                            <p><a href="tel:+919894593444" style={{color: 'inherit', textDecoration: 'none'}}>+91 98945 93444</a></p>
+                        </div>
+                    </div>
+                    <div className="contact-item">
+                        <div className="contact-icon">
+                            <i className="fas fa-envelope"></i>
+                        </div>
+                        <div className="contact-details">
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:covaimachinetech@gmail.com" style={{color: 'inherit', textDecoration: 'none'}}>covaimachinetech@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div className="contact-item">
+                        <div className="contact-icon">
+                            <i className="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div className="contact-details">
+                            <h4>Factory Location</h4>
+                            <p>SF. No: 85B/1, Annur Main Road, Near Suzlon,<br />Kittampalayam (Po), Karumathampatti,<br />Coimbatore – 641 659, Tamil Nadu, India.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {/*  Footer  */}
+    <footer className="footer">
+        <div className="container">
+            <div className="footer-content">
+                <div className="footer-section">
+                    <a href="#home" style={{display: 'block', marginBottom: '1.5rem'}}>
+                        <img src="/logo.png" alt="Covai Machine Tech Logo" style={{height: '45px', width: 'auto', maxWidth: '100%'}} />
+                    </a>
+                    <p>Your trusted partner in precision CNC machining solutions.</p>
+                    <div className="social-links">
+                        <a href="#" className="social-link"><i className="fab fa-facebook"></i></a>
+                        <a href="#" className="social-link"><i className="fab fa-twitter"></i></a>
+                        <a href="#" className="social-link"><i className="fab fa-linkedin"></i></a>
+                        <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div className="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul className="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div className="footer-section">
+                    <h4>Services</h4>
+                    <ul className="footer-links">
+                        <li><a href="#services">CNC Turning</a></li>
+                        <li><a href="#services">CNC Milling</a></li>
+                        <li><a href="#services">Custom Fabrication</a></li>
+                        <li><a href="#services">Prototype Development</a></li>
+                    </ul>
+                </div>
+                <div className="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul className="footer-contact">
+                        <li><i className="fas fa-user"></i> S. Vasanth Raj, B.E.</li>
+                        <li><i className="fas fa-phone"></i> +91 98945 93444</li>
+                        <li><i className="fas fa-envelope"></i> covaimachinetech@gmail.com</li>
+                        <li><i className="fas fa-map-marker-alt"></i> Karumathampatti, Coimbatore - 641659</li>
+                        <li><i className="fas fa-id-card"></i> GSTIN: 33BBFPV2361C3ZV</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                <p>&copy; 2024 CovaiMachineTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    {/*  JavaScript  */}
+    <script src="/script.js"></script>
+
+    </>
   );
 }
