@@ -702,9 +702,10 @@ section {
 /* Contact Section */
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
     gap: 4rem;
-    margin-bottom: 4rem;
 }
 
 .contact-info {
