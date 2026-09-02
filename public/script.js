@@ -1,3 +1,4 @@
+(function() {
 // DOM Elements
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -453,3 +454,5 @@ window.addEventListener('afterprint', () => {
 });
 
 console.log('CovaiMachineTech website initialized successfully!');
+
+})();
