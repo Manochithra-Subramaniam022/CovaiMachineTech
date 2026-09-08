@@ -5,7 +5,7 @@ const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navbar = document.querySelector('.navbar');
 const statNumbers = document.querySelectorAll('.stat-number');
-const contactForm = document.getElementById('contact-form');
+const contactForms = document.querySelectorAll('form');
 
 // Mobile Navigation Toggle
 navToggle.addEventListener('click', () => {
@@ -119,44 +119,54 @@ revealElements.forEach(element => {
 });
 
 // Contact Form Handler
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+contactForms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
+        const formData = new FormData(form);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
         
-        // Simple validation
-        if (!name || !email || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
+        // Find inputs by placeholder if name attribute is missing
+        let company = formData.get('company') || '';
+        if (!company) {
+            const companyInput = form.querySelector('input[placeholder*="Company"]');
+            if (companyInput) company = companyInput.value;
         }
         
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
+        let message = formData.get('message') || '';
+        if (!message) {
+            const textarea = form.querySelector('textarea');
+            if (textarea) message = textarea.value;
         }
         
-        // Simulate form submission
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
+        // Simulate form submission visually
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton ? submitButton.textContent : 'Send';
+        if (submitButton) {
+            submitButton.textContent = 'Redirecting...';
+            submitButton.disabled = true;
+        }
+        
+        // Construct WhatsApp URL
+        const wpNumber = '919894593444';
+        let text = `Hello Covai Machine Tech,\n\nI would like to make an inquiry:\n\n*Name:* ${name}\n*Email:* ${email}`;
+        if (company) text += `\n*Company:* ${company}`;
+        text += `\n*Requirements:* ${message}`;
+        
+        const wpUrl = `https://api.whatsapp.com/send?phone=${wpNumber}&text=${encodeURIComponent(text)}`;
         
         setTimeout(() => {
-            // Reset form
-            contactForm.reset();
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-            
-            // Show success message
-            showNotification('Thank you for your message! We will get back to you soon.', 'success');
-        }, 2000);
+            if (submitButton) {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+            form.reset();
+            window.open(wpUrl, '_blank');
+        }, 800);
     });
-}
+});
 
 // Email validation helper
 function isValidEmail(email) {

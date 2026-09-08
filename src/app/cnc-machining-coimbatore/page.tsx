@@ -71,7 +71,7 @@ export default function CNCMachiningCoimbatore() {
             "name": "What is the maximum capacity of your CNC machines?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our Heavy Duty VTLs can handle up to 700mm turning diameter, and our Double Column Machining Centers can handle beds up to 2600mm x 1800mm."
+              "text": "Our Heavy Duty VTLs can handle up to 700mm turning diameter, and our Double Column Machining Centers can handle beds up to 2600mm x 2400mm."
             }
           },
           {
@@ -118,7 +118,7 @@ export default function CNCMachiningCoimbatore() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #ddd' }}>
                     <th style={{ padding: '1rem', textAlign: 'left', backgroundColor: '#f8f9fa' }}>Bed Size</th>
-                    <td style={{ padding: '1rem' }}>2600mm x 1800mm (Double Column)</td>
+                    <td style={{ padding: '1rem' }}>2600mm x 2400mm (Double Column)</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #ddd' }}>
                     <th style={{ padding: '1rem', textAlign: 'left', backgroundColor: '#f8f9fa' }}>Materials</th>
@@ -152,7 +152,7 @@ export default function CNCMachiningCoimbatore() {
                 </details>
                 <details style={{ background: '#f8f9fa', padding: '1rem', borderRadius: '8px', cursor: 'pointer' }}>
                   <summary style={{ fontWeight: '600', color: 'var(--primary-color)' }}>What is the maximum capacity of your CNC machines?</summary>
-                  <p style={{ marginTop: '0.5rem', color: 'var(--text-color)' }}>Our Heavy Duty VTLs can handle up to 700mm turning diameter, and our Double Column Machining Centers can handle beds up to 2600mm x 1800mm.</p>
+                  <p style={{ marginTop: '0.5rem', color: 'var(--text-color)' }}>Our Heavy Duty VTLs can handle up to 700mm turning diameter, and our Double Column Machining Centers can handle beds up to 2600mm x 2400mm.</p>
                 </details>
                 <details style={{ background: '#f8f9fa', padding: '1rem', borderRadius: '8px', cursor: 'pointer' }}>
                   <summary style={{ fontWeight: '600', color: 'var(--primary-color)' }}>Do you accept custom RFQs and job work?</summary>

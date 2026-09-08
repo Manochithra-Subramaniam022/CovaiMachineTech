@@ -891,8 +891,8 @@ section {
 }
 
 .input-group textarea {
-    resize: vertical;
-    min-height: 40px;
+    resize: none;
+    min-height: 100px;
 }
 
 .textarea-icon {

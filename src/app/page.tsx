@@ -87,9 +87,26 @@ export default function Home() {
                 </div>
 
                 <div className="about-text-content" style={{marginBottom: '3rem', fontSize: '1.1rem', lineHeight: '1.8', color: '#334155'}}>
-                    <p style={{marginBottom: '1.2rem'}}>Covai Machine Tech is an ISO 9001:2015 certified precision CNC manufacturing facility situated on Annur Main Road, Near Suzlon, Kittampalayam, Karumathampatti, Coimbatore. Spanning an expansive <strong style={{color: '#ff5722'}}>2-Acre facility with 7,000 Sq.Ft of constructed workspace</strong>, we are equipped with state-of-the-art infrastructure and well-trained operators.</p>
-                    <p style={{marginBottom: '1.2rem'}}>We are a team of qualified professionals with a proficient technical background, undertaking all kinds of challenging projects. We thoroughly understand customer requirements and adhere to precise planning and execution with a firm emphasis on quality and timely delivery at optimal cost.</p>
-                    <p>Our core capabilities include machining various valve components such as ball valves, gate valves, globe valves, check valves, and other pipeline-related parts. We undertake complete and partial job work based on client drawings, specifications, and industry standards, supported by our own dedicated transportation facilities for collection and delivery.</p>
+                    <p style={{marginBottom: '1.5rem', textAlign: 'justify'}}>
+                        <strong style={{color: '#111827', fontSize: '1.2rem'}}>Covai Machine Tech</strong> is an <strong>ISO 9001:2015 certified</strong> precision CNC manufacturing facility located in Coimbatore. With a highly qualified team, we undertake all kinds of challenging projects, ensuring precise planning, quality execution, and timely delivery at an optimal cost.
+                    </p>
+                    
+                    <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginTop: '2rem'}}>
+                        <div style={{background: '#f8f9fa', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #ff5722'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px'}}><i className="fas fa-industry" style={{color: '#ff5722'}}></i> Infrastructure</h4>
+                            <p style={{fontSize: '0.95rem', margin: '0'}}>Spanning an expansive <strong>2-Acre facility</strong> with <strong>7,000 Sq.Ft</strong> of constructed workspace and state-of-the-art machinery.</p>
+                        </div>
+                        
+                        <div style={{background: '#f8f9fa', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #0ea5e9'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px'}}><i className="fas fa-cogs" style={{color: '#0ea5e9'}}></i> Core Capabilities</h4>
+                            <p style={{fontSize: '0.95rem', margin: '0'}}>Machining various valve components (ball, gate, globe, check) and complete/partial job work based on client specifications.</p>
+                        </div>
+                        
+                        <div style={{background: '#f8f9fa', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #10b981'}}>
+                            <h4 style={{color: '#111827', fontSize: '1.1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px'}}><i className="fas fa-truck-fast" style={{color: '#10b981'}}></i> Logistics</h4>
+                            <p style={{fontSize: '0.95rem', margin: '0'}}>Supported by our own dedicated transportation facilities for swift and reliable collection and delivery.</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/*  Full-Width Uncropped Company View Showcase  */}
@@ -182,7 +199,7 @@ export default function Home() {
                         <i className="fas fa-microscope" style={{fontSize: '1.8rem', color: '#059669', background: 'rgba(16, 185, 129, 0.12)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
                     </div>
                     <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>CMM Quality Inspection</h3>
-                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Rigorous quality control utilizing CARL ZEISS CONTURA 3D CMM, Trimos V7 2D Height Gauge (up to 1023mm), Mahr Surface Roughness tester, and Mitutoyo digital gauges.</p>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Rigorous quality control utilizing CARL ZEISS SPECTRUM VERITY 3D CMM, Trimos V7 2D Height Gauge (up to 1023mm), Mahr Surface Roughness tester, and Mitutoyo digital gauges.</p>
                 </div>
                 <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
@@ -273,20 +290,20 @@ export default function Home() {
                     <div className="machine-info" style={{padding: '1.8rem'}}>
                         <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Double Column Machining Center <i className="fas fa-cubes" style={{color: '#a855f7', fontSize: '1.1rem'}}></i></h3>
                         <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> KTM / DCMC2618</p>
-                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Travel:</strong> X Axis: 2600mm | Y Axis: 1800mm | Z Axis: 1000mm</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Travel:</strong> X Axis: 2600mm | Y Axis: 2400mm | Z Axis: 1000mm</p>
                         <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#a855f7'}}>Includes:</strong> Through Coolant, Angular Head | No of Tools: 20 Pockets</p>
                     </div>
                 </div>
                 <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
                     <div className="machine-image" style={{height: '280px', overflow: 'hidden', position: 'relative', background: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '15px'}}>
-                        <img src="/images/machine-zeiss-contura.webp" width={800} height={600} alt="Co-ordinate Measuring Machine - CARL ZEISS CONTURA" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
+                        <img src="/images/machine-zeiss-spectrum.webp" width={800} height={600} alt="Co-ordinate Measuring Machine - CARL ZEISS SPECTRUM VERITY 9126 RDS" style={{width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 0.5s ease'}} />
                         <span style={{position: 'absolute', top: '15px', right: '15px', background: '#10b981', color: '#fff', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '20px', textTransform: 'uppercase'}}>ZEISS CMM</span>
                     </div>
                     <div className="machine-info" style={{padding: '1.8rem'}}>
                         <h3 style={{color: '#111827', fontSize: '1.3rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>Co-ordinate Measuring Machine <i className="fas fa-microscope" style={{color: '#10b981', fontSize: '1.1rem'}}></i></h3>
                         <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Make:</strong> CARL ZEISS</p>
-                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Model:</strong> CONTURA</p>
-                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#10b981'}}>Measuring Range:</strong> X = 700mm | Y = 100mm | Z = 600mm</p>
+                        <p style={{color: '#475569', fontSize: '0.95rem', marginBottom: '0.5rem'}}><strong style={{color: '#111827'}}>Model:</strong> SPECTRUM VERITY 9126 RDS VAST XXT</p>
+                        <p style={{color: '#64748b', fontSize: '0.88rem', margin: '0', borderTop: '1px solid #e2e8f0', paddingTop: '0.8rem', marginTop: '0.8rem'}}><strong style={{color: '#10b981'}}>Measuring Range:</strong> X = 900mm | Y = 1200mm | Z = 600mm</p>
                     </div>
                 </div>
                 <div className="machine-card" style={{background: '#f8f9fa', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)'}}>
@@ -607,7 +624,6 @@ export default function Home() {
                         <div className="input-group">
                             <label>Message</label>
                             <textarea name="message" required></textarea>
-                            <i className="fas fa-hand-pointer textarea-icon"></i>
                         </div>
                         <button type="submit" className="submit-btn">Send Message</button>
                     </form>

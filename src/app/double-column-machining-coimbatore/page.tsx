@@ -55,7 +55,7 @@ export default function DoubleColumnMachiningCoimbatore() {
             "name": "What is the capacity of your Double Column Machining Center?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our KTM DCMC2618 has a massive bed size of 2600mm x 1800mm, designed specifically for heavy and oversized components."
+              "text": "Our KTM DCMC2618 has a massive travel size of 2600mm x 2400mm x 1000mm, designed specifically for heavy and oversized components."
             }
           },
           {
@@ -114,7 +114,7 @@ export default function DoubleColumnMachiningCoimbatore() {
                   </tr>
                   <tr style={{ borderBottom: '1px solid #ddd' }}>
                     <th style={{ padding: '1rem', textAlign: 'left', backgroundColor: '#f8f9fa' }}>Bed Size</th>
-                    <td style={{ padding: '1rem' }}>2600mm x 1800mm</td>
+                    <td style={{ padding: '1rem' }}>2600mm x 2400mm</td>
                   </tr>
                   <tr style={{ borderBottom: '1px solid #ddd' }}>
                     <th style={{ padding: '1rem', textAlign: 'left', backgroundColor: '#f8f9fa' }}>Key Machine</th>

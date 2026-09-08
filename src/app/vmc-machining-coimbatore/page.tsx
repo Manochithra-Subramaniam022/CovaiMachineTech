@@ -71,7 +71,7 @@ export default function VMCMachiningCoimbatore() {
             "name": "How do you ensure precision in your VMC components?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "All VMC components undergo rigorous inspection using our Carl Zeiss Contura CMM and Trimos V7 height gauges in a climate-controlled room."
+              "text": "All VMC components undergo rigorous inspection using our Carl Zeiss Spectrum Verity CMM and Trimos V7 height gauges in a climate-controlled room."
             }
           },
           {
@@ -148,7 +148,7 @@ export default function VMCMachiningCoimbatore() {
                 </details>
                 <details style={{ background: '#f8f9fa', padding: '1rem', borderRadius: '8px', cursor: 'pointer' }}>
                   <summary style={{ fontWeight: '600', color: 'var(--primary-color)' }}>How do you ensure precision in your VMC components?</summary>
-                  <p style={{ marginTop: '0.5rem', color: 'var(--text-color)' }}>All VMC components undergo rigorous inspection using our Carl Zeiss Contura CMM and Trimos V7 height gauges in a climate-controlled room.</p>
+                  <p style={{ marginTop: '0.5rem', color: 'var(--text-color)' }}>All VMC components undergo rigorous inspection using our Carl Zeiss Spectrum Verity CMM and Trimos V7 height gauges in a climate-controlled room.</p>
                 </details>
                 <details style={{ background: '#f8f9fa', padding: '1rem', borderRadius: '8px', cursor: 'pointer' }}>
                   <summary style={{ fontWeight: '600', color: 'var(--primary-color)' }}>What materials are best suited for VMC machining?</summary>
