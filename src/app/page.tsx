@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -167,7 +168,8 @@ export default function Home() {
                         <i className="fas fa-cog" style={{fontSize: '1.8rem', color: '#ff5722', background: 'rgba(255, 87, 34, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
                     </div>
                     <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>CNC Turning Operations</h3>
-                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Advanced high-speed turning using LMW LL20TL5 & LL20TL10 centers (with steady rest) for precision cylindrical components up to 1100mm turning length.</p>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0', flexGrow: 1}}>Advanced high-speed turning using LMW LL20TL5 & LL20TL10 centers (with steady rest) for precision cylindrical components up to 1100mm turning length.</p>
+                    <Link href="/cnc-machining-coimbatore" className="btn btn-primary" style={{marginTop: '1.5rem', alignSelf: 'flex-start', padding: '10px 24px', fontSize: '0.95rem', textDecoration: 'none'}}>Explore CNC Turning</Link>
                 </div>
                 <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
@@ -175,7 +177,11 @@ export default function Home() {
                         <i className="fas fa-industry" style={{fontSize: '1.8rem', color: '#ff5722', background: 'rgba(255, 87, 34, 0.1)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
                     </div>
                     <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Vertical Machining (VMC)</h3>
-                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>High-precision 3-Axis and 4-Axis (U-CAM) machining using BFW, AMS (1800mm travel), and KTM Double Column Machining Centers with through-coolant & angular head.</p>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0', flexGrow: 1}}>High-precision 3-Axis and 4-Axis (U-CAM) machining using BFW, AMS (1800mm travel), and KTM Double Column Machining Centers with through-coolant & angular head.</p>
+                    <div style={{marginTop: '1.5rem', display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                        <Link href="/vmc-machining-coimbatore" className="btn btn-primary" style={{padding: '10px 24px', fontSize: '0.95rem', textDecoration: 'none'}}>Explore VMC</Link>
+                        <Link href="/double-column-machining-coimbatore" className="btn btn-secondary" style={{padding: '10px 24px', fontSize: '0.95rem', textDecoration: 'none'}}>Double Column</Link>
+                    </div>
                 </div>
                 <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
@@ -183,7 +189,8 @@ export default function Home() {
                         <i className="fas fa-ruler-combined" style={{fontSize: '1.8rem', color: '#d97706', background: 'rgba(245, 158, 11, 0.12)', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px'}}></i>
                     </div>
                     <h3 style={{fontSize: '1.4rem', color: '#111827', fontWeight: '700', marginBottom: '1rem'}}>Vertical Turning Lathe</h3>
-                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0'}}>Heavy-duty precision turning up to 800mm swing diameter and 700mm turning length using BFW BVL 700H for large industrial and valve components.</p>
+                    <p style={{color: '#475569', fontSize: '1rem', lineHeight: '1.7', margin: '0', flexGrow: 1}}>Heavy-duty precision turning up to 800mm swing diameter and 700mm turning length using BFW BVL 700H for large industrial and valve components.</p>
+                    <Link href="/vtl-machining-coimbatore" className="btn btn-primary" style={{marginTop: '1.5rem', alignSelf: 'flex-start', padding: '10px 24px', fontSize: '0.95rem', textDecoration: 'none'}}>Explore VTL</Link>
                 </div>
                 <div className="service-card" style={{padding: '2.5rem', background: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'var(--transition)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem'}}>
