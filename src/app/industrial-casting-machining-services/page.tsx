@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Industrial Casting Machining | Custom CNC Component Manufacturing',
     description: 'Precision industrial casting machining, bearing housing machining, and custom component manufacturing in Coimbatore. ISO 9001:2015 certified.',
-    url: 'https://covaimachinetech.com/industrial-casting-machining-services',
+    url: 'https://www.covaimachinetech.com/industrial-casting-machining-services',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/portfolio-custom-assembly.webp',
+        url: 'https://www.covaimachinetech.com/images/portfolio-custom-assembly.webp',
         width: 800,
         height: 600,
         alt: 'Industrial Casting Machining and Custom Component Manufacturing in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/industrial-casting-machining-services',
+    canonical: 'https://www.covaimachinetech.com/industrial-casting-machining-services',
   },
 };
 
@@ -36,13 +36,13 @@ export default function IndustrialCastingMachiningServices() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Industrial Casting Machining Services",
-            "item": "https://covaimachinetech.com/industrial-casting-machining-services"
+            "item": "https://www.covaimachinetech.com/industrial-casting-machining-services"
           }
         ]
       },

@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CNC Machining Job Work Enquiries | Covai Machine Tech Coimbatore',
     description: 'Fast RFQ and technical drawing evaluation for precision CNC machining job work in Coimbatore. ISO 9001:2015 certified manufacturing facility.',
-    url: 'https://covaimachinetech.com/cnc-machining-job-work-enquiries',
+    url: 'https://www.covaimachinetech.com/cnc-machining-job-work-enquiries',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/hero-cnc.webp',
+        url: 'https://www.covaimachinetech.com/images/hero-cnc.webp',
         width: 1920,
         height: 1080,
         alt: 'CNC Machining Job Work Enquiries at Covai Machine Tech Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/cnc-machining-job-work-enquiries',
+    canonical: 'https://www.covaimachinetech.com/cnc-machining-job-work-enquiries',
   },
 };
 
@@ -36,13 +36,13 @@ export default function CNCMachiningJobWorkEnquiries() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "CNC Machining Job Work Enquiries",
-            "item": "https://covaimachinetech.com/cnc-machining-job-work-enquiries"
+            "item": "https://www.covaimachinetech.com/cnc-machining-job-work-enquiries"
           }
         ]
       },
@@ -50,7 +50,7 @@ export default function CNCMachiningJobWorkEnquiries() {
         "@type": "ContactPage",
         "name": "CNC Machining Job Work Enquiries – Covai Machine Tech",
         "description": "Direct quotation and technical RFQ submission portal for CNC machining job work, turning, VMC milling, double column, and VTL services in Coimbatore, India.",
-        "url": "https://covaimachinetech.com/cnc-machining-job-work-enquiries",
+        "url": "https://www.covaimachinetech.com/cnc-machining-job-work-enquiries",
         "mainEntity": {
           "@type": "LocalBusiness",
           "name": "Covai Machine Tech",

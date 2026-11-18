@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CNC Machining Job Work India | Top CNC Machining Vendors in Tamil Nadu',
     description: 'Premier CNC machining vendor in India and Tamil Nadu. Full multi-axis CNC, VMC, VTL, and Double Column job work with dedicated logistics across India.',
-    url: 'https://covaimachinetech.com/cnc-machining-job-work-india',
+    url: 'https://www.covaimachinetech.com/cnc-machining-job-work-india',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/company-view.webp',
+        url: 'https://www.covaimachinetech.com/images/company-view.webp',
         width: 800,
         height: 600,
         alt: 'Covai Machine Tech 2-Acre Precision CNC Manufacturing Facility in Coimbatore India',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/cnc-machining-job-work-india',
+    canonical: 'https://www.covaimachinetech.com/cnc-machining-job-work-india',
   },
 };
 
@@ -36,13 +36,13 @@ export default function CNCMachiningJobWorkIndia() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "CNC Machining Job Work in India & Tamil Nadu",
-            "item": "https://covaimachinetech.com/cnc-machining-job-work-india"
+            "item": "https://www.covaimachinetech.com/cnc-machining-job-work-india"
           }
         ]
       },

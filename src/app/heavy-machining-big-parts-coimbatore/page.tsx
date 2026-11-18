@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Heavy Machining in Coimbatore | Big Size & Large Parts CNC Machining',
     description: 'Heavy duty CNC machining, big size machining, gantry and double column milling up to 2600mm bed size in Coimbatore.',
-    url: 'https://covaimachinetech.com/heavy-machining-big-parts-coimbatore',
+    url: 'https://www.covaimachinetech.com/heavy-machining-big-parts-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/machine-ktm-dcmc2618.webp',
+        url: 'https://www.covaimachinetech.com/images/machine-ktm-dcmc2618.webp',
         width: 800,
         height: 600,
         alt: 'Heavy Duty Double Column CNC Machining Center in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/heavy-machining-big-parts-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/heavy-machining-big-parts-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function HeavyMachiningBigPartsCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Heavy Machining & Big Parts in Coimbatore",
-            "item": "https://covaimachinetech.com/heavy-machining-big-parts-coimbatore"
+            "item": "https://www.covaimachinetech.com/heavy-machining-big-parts-coimbatore"
           }
         ]
       },

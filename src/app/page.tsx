@@ -26,8 +26,8 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": ["ManufacturingBusiness", "LocalBusiness"],
           "name": "Covai Machine Tech",
-          "image": "https://covaimachinetech.com/logo_transparent.png",
-          "url": "https://covaimachinetech.com",
+          "image": "https://www.covaimachinetech.com/logo_transparent.png",
+          "url": "https://www.covaimachinetech.com/",
           "telephone": "+919894593444",
           "email": "covaimachinetech@gmail.com",
           "address": {

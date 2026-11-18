@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CNC Turning Job Work in Coimbatore | Precision Lathe Turning Machine Shop',
     description: 'Precision CNC lathe job work, shaft machining, boring and turning in Coimbatore. LMW CNC turning centers up to 1100mm turning length.',
-    url: 'https://covaimachinetech.com/cnc-turning-job-work-coimbatore',
+    url: 'https://www.covaimachinetech.com/cnc-turning-job-work-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/portfolio-turned-parts.webp',
+        url: 'https://www.covaimachinetech.com/images/portfolio-turned-parts.webp',
         width: 800,
         height: 600,
         alt: 'High Precision CNC Turned Parts and Shaft Machining in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/cnc-turning-job-work-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/cnc-turning-job-work-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function CNCTurningJobWorkCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "CNC Turning Job Work in Coimbatore",
-            "item": "https://covaimachinetech.com/cnc-turning-job-work-coimbatore"
+            "item": "https://www.covaimachinetech.com/cnc-turning-job-work-coimbatore"
           }
         ]
       },

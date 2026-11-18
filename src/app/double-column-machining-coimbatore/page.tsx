@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Double Column Machining in Coimbatore | Double Column VMC Job Work',
     description: 'Heavy duty Double Column Machining in Coimbatore for large industrial components. We machine structures up to 2600x2400mm with exceptional accuracy.',
-    url: 'https://covaimachinetech.com/double-column-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/double-column-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/machine-ktm-dcmc2618.webp',
+        url: 'https://www.covaimachinetech.com/images/machine-ktm-dcmc2618.webp',
         width: 800,
         height: 600,
         alt: 'KTM Double Column Machining Center DCMC2618 in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/double-column-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/double-column-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function DoubleColumnMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Double Column Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/double-column-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/double-column-machining-coimbatore"
           }
         ]
       },

@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'VMC Machining in Coimbatore | 3-Axis & 4-Axis Milling',
     description: 'Specialized VMC machining in Coimbatore offering 3-axis and 4-axis precision milling for complex components.',
-    url: 'https://covaimachinetech.com/vmc-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/vmc-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/machine-ams-1690v50.webp',
+        url: 'https://www.covaimachinetech.com/images/machine-ams-1690v50.webp',
         width: 800,
         height: 600,
         alt: 'Vertical Machining Center VMC AMS 1690V-50 in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/vmc-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/vmc-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function VMCMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "VMC Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/vmc-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/vmc-machining-coimbatore"
           }
         ]
       },

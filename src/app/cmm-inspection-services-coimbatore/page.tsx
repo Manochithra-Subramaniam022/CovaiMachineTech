@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CMM Inspection in Coimbatore | 3D CMM Measuring Services',
     description: 'Precision CMM inspection in Coimbatore with Carl Zeiss Spectrum Verity 3D CMM and Trimos V7 height gauge. Complete dimensional QA reports.',
-    url: 'https://covaimachinetech.com/cmm-inspection-services-coimbatore',
+    url: 'https://www.covaimachinetech.com/cmm-inspection-services-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/machine-zeiss-spectrum.webp',
+        url: 'https://www.covaimachinetech.com/images/machine-zeiss-spectrum.webp',
         width: 800,
         height: 600,
         alt: 'Carl Zeiss Spectrum Verity 3D Coordinate Measuring Machine CMM Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/cmm-inspection-services-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/cmm-inspection-services-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function CMMInspectionServicesCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "CMM Inspection in Coimbatore",
-            "item": "https://covaimachinetech.com/cmm-inspection-services-coimbatore"
+            "item": "https://www.covaimachinetech.com/cmm-inspection-services-coimbatore"
           }
         ]
       },

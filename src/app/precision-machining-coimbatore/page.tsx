@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Precision Machining in Coimbatore | Non Standard & Critical Jobs',
     description: 'Specialist in non standard machining, critical engineering jobs, and high accuracy components in Coimbatore. ISO 9001:2015 certified facility.',
-    url: 'https://covaimachinetech.com/precision-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/precision-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/portfolio-inconel-steel.webp',
+        url: 'https://www.covaimachinetech.com/images/portfolio-inconel-steel.webp',
         width: 800,
         height: 600,
         alt: 'Precision Machining of Inconel and Alloy Steel Components in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/precision-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/precision-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function PrecisionMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Precision Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/precision-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/precision-machining-coimbatore"
           }
         ]
       },

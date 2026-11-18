@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Valve Component Machining in Coimbatore | Gate, Ball & Pipeline Valves',
     description: 'Precision machining for industrial valves, gate valves, pipeline valves, flanges, and pump components in Coimbatore. ISO 9001:2015 certified.',
-    url: 'https://covaimachinetech.com/valve-component-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/valve-component-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/portfolio-ball-valve.webp',
+        url: 'https://www.covaimachinetech.com/images/portfolio-ball-valve.webp',
         width: 800,
         height: 600,
         alt: 'Industrial Ball Valve and Gate Valve Component Machining in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/valve-component-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/valve-component-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function ValveComponentMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Valve Component Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/valve-component-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/valve-component-machining-coimbatore"
           }
         ]
       },

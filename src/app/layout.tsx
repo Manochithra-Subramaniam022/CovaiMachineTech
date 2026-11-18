@@ -8,9 +8,20 @@ import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://covaimachinetech.com'),
+  metadataBase: new URL('https://www.covaimachinetech.com'),
   title: "CovaiMachineTech - Precision CNC Machining Solutions",
   description: "CovaiMachineTech offers high-quality CNC machining solutions with advanced technology and precision manufacturing in Coimbatore, Tamil Nadu.",
+  alternates: {
+    canonical: 'https://www.covaimachinetech.com/',
+  },
+  openGraph: {
+    title: "CovaiMachineTech - Precision CNC Machining Solutions",
+    description: "CovaiMachineTech offers high-quality CNC machining solutions with advanced technology and precision manufacturing in Coimbatore, Tamil Nadu.",
+    url: 'https://www.covaimachinetech.com/',
+    siteName: 'Covai Machine Tech',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

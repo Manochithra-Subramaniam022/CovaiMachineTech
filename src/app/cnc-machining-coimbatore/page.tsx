@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CNC Machining in Coimbatore | CNC Machine Shop & Job Work',
     description: 'Precision CNC turning, milling, and VTL machining for industrial components in Coimbatore. ISO 9001:2015 certified machine shop.',
-    url: 'https://covaimachinetech.com/cnc-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/cnc-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/hero-cnc.webp',
+        url: 'https://www.covaimachinetech.com/images/hero-cnc.webp',
         width: 1920,
         height: 1080,
         alt: 'Precision CNC Machining Services and Machine Shop in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/cnc-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/cnc-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function CNCMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "CNC Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/cnc-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/cnc-machining-coimbatore"
           }
         ]
       },

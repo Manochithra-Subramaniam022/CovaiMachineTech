@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'VTL Machining in Coimbatore | Vertical Turning Lathe Job Work',
     description: 'Heavy duty VTL machining services in Coimbatore. We handle components up to 700mm in turning diameter and 800mm swing.',
-    url: 'https://covaimachinetech.com/vtl-machining-coimbatore',
+    url: 'https://www.covaimachinetech.com/vtl-machining-coimbatore',
     siteName: 'Covai Machine Tech',
     images: [
       {
-        url: 'https://covaimachinetech.com/images/machine-bfw-bvl700h.webp',
+        url: 'https://www.covaimachinetech.com/images/machine-bfw-bvl700h.webp',
         width: 800,
         height: 600,
         alt: 'BFW BVL 700H Heavy Vertical Turning Lathe VTL in Coimbatore',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://covaimachinetech.com/vtl-machining-coimbatore',
+    canonical: 'https://www.covaimachinetech.com/vtl-machining-coimbatore',
   },
 };
 
@@ -36,13 +36,13 @@ export default function VTLMachiningCoimbatore() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://covaimachinetech.com"
+            "item": "https://www.covaimachinetech.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "VTL Machining in Coimbatore",
-            "item": "https://covaimachinetech.com/vtl-machining-coimbatore"
+            "item": "https://www.covaimachinetech.com/vtl-machining-coimbatore"
           }
         ]
       },
